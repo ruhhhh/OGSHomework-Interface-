@@ -16,8 +16,16 @@ public class OGSGisesi {
     private JButton mesaiyiBitirButton;
     private JTextArea textArea2;
     private JTable table1;
-    int sayacOGSYok=0;
-    int sayacBakiyeYetersiz=0;
+    int sayacOGSYokAraba = 0;
+    int sayacBakiyeYetersizAraba = 0;
+
+    int sayacOGSYokMinibus = 0;
+
+    int sayacBakiyeYetersizMinibus = 0;
+
+    int sayacOGSYokOtobus = 0;
+
+    int getSayacBakiyeYetersizOtobus = 0;
     public OGSGisesi() {
         button1.addActionListener(new ActionListener() {
             /**
@@ -72,12 +80,12 @@ public class OGSGisesi {
                             {
                                 System.out.print(" " + hata.getMessage());
                             }
-                            model.addRow(new Object[]{wordOtomobil, "Otomobil", "1. Sınıf Araç", "-", "OGS Cihazı Yok", car.ceza()*2+" TL"});
-                            sayacOGSYok++;
+                            model.addRow(new Object[]{wordOtomobil, "Otomobil", "1. Sınıf Araç", "-", "OGS Cihazı Yok", car.ceza*2+" TL"});
+                            sayacOGSYokAraba++;
                         }
                         else if (car.balance<0) {
                             model.addRow(new Object[]{wordOtomobil, "Otomobil", "1. Sınıf Araç", car.balance, "Bakiye Yetersiz.", car.ceza+" TL"});
-                            sayacBakiyeYetersiz++;
+                            sayacBakiyeYetersizAraba++;
                         } else {
                             model.addRow(new Object[]{wordOtomobil, "Otomobil", "1. Sınıf Araç", car.balance + " TL", "Uygun"});
 
@@ -98,11 +106,11 @@ public class OGSGisesi {
                         {
                             System.out.print(" " + hata.getMessage());
                         }
-                        model.addRow(new Object[]{wordMinibus, "Minibüs", "2. Sınıf Araç", "-", "OGS Cihazı Yok", minibus.ceza()*2+" TL"});
-                        sayacOGSYok++;
+                        model.addRow(new Object[]{wordMinibus, "Minibüs", "2. Sınıf Araç", "-", "OGS Cihazı Yok", minibus.ceza*2+" TL"});
+                        sayacOGSYokMinibus++;
                     } else if (minibus.balance<0) {
                         model.addRow(new Object[]{wordMinibus, "Minibüs", "2. Sınıf Araç", minibus.balance, "Bakiye Yetersiz.", minibus.ceza+" TL"});
-                        sayacBakiyeYetersiz++;
+                        sayacBakiyeYetersizMinibus++;
                     }
                     else {
                         model.addRow(new Object[]{wordMinibus, "Minibüs", "2. Sınıf Araç", minibus.balance + " TL", "Uygun"});
@@ -123,11 +131,11 @@ public class OGSGisesi {
                         {
                             System.out.print(" " + hata.getMessage());
                         }
-                        model.addRow(new Object[]{wordOtobus, "Otobüs", "3. Sınıf Araç", "-", "OGS Cihazı Yok", bus.ceza()*2+" TL"});
-                        sayacOGSYok++;
+                        model.addRow(new Object[]{wordOtobus, "Otobüs", "3. Sınıf Araç", "-", "OGS Cihazı Yok", bus.ceza*2+" TL"});
+                        sayacOGSYokOtobus++;
                     } else if (minibus.balance<0) {
                         model.addRow(new Object[]{wordOtobus, "Otobüs", "3. Sınıf Araç", bus.balance, "Bakiye Yetersiz.", bus.ceza+" TL"});
-                        sayacBakiyeYetersiz++;
+                        getSayacBakiyeYetersizOtobus++;
                     }
                     else {
                         model.addRow(new Object[]{wordOtobus, "Otobüs", "3. Sınıf Araç", bus.balance + " TL", "Uygun"});
@@ -135,8 +143,8 @@ public class OGSGisesi {
                 }
 
                 textArea2.setText("Toplam gelen " + (minibus.totalVehicle+ car.totalVehicle+ bus.totalVehicle) + " araç için kazanılan para: " + admin.report(counter)+ " TL"+
-                        "\nOGS olmayan Araç-Minibüs-Otobüs sayısı: " + sayacOGSYok + " Tahsil edilen ceza tutarı: " + (sayacOGSYok* car.ceza()+ sayacOGSYok*minibus.ceza() + sayacOGSYok* bus.ceza())*2 +
-                        "\nYetersiz bakiyesi olan Araç-Minibüs-Otobüs sayısı: " + sayacBakiyeYetersiz + " Tahsil edilen ceza tutarı: " + (sayacBakiyeYetersiz* car.ceza()+sayacBakiyeYetersiz* minibus.ceza()+ sayacBakiyeYetersiz* bus.ceza()));
+                        "\nOGS olmayan Araç-Minibüs-Otobüs sayısı: " + (sayacOGSYokAraba+sayacOGSYokOtobus+sayacOGSYokMinibus) + " Tahsil edilen ceza tutarı: " + (sayacOGSYokAraba* car.ceza()+ sayacOGSYokMinibus*minibus.ceza() + sayacOGSYokOtobus* bus.ceza())*2 +
+                        "\nYetersiz bakiyesi olan Araç-Minibüs-Otobüs sayısı: " + (sayacBakiyeYetersizAraba+sayacBakiyeYetersizMinibus+getSayacBakiyeYetersizOtobus) + " Tahsil edilen ceza tutarı: " + (sayacBakiyeYetersizAraba* car.ceza()+sayacBakiyeYetersizMinibus* minibus.ceza()+ getSayacBakiyeYetersizOtobus* bus.ceza()));
 
             }
         });
