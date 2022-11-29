@@ -78,6 +78,7 @@ public class OGSGisesi {
                             }
                             catch (OGSHaveNot hata)
                             {
+                                JOptionPane.showMessageDialog(null, wordOtomobil + "\n" + hata.getMessage());
                                 System.out.print(" " + hata.getMessage());
                             }
                             model.addRow(new Object[]{wordOtomobil, "Otomobil", "1. Sınıf Araç", "-", "OGS Cihazı Yok", car.ceza*2+" TL"});
@@ -104,6 +105,7 @@ public class OGSGisesi {
                         }
                         catch (OGSHaveNot hata)
                         {
+                            JOptionPane.showMessageDialog(null, wordMinibus + "\n" + hata.getMessage());
                             System.out.print(" " + hata.getMessage());
                         }
                         model.addRow(new Object[]{wordMinibus, "Minibüs", "2. Sınıf Araç", "-", "OGS Cihazı Yok", minibus.ceza*2+" TL"});
@@ -129,6 +131,7 @@ public class OGSGisesi {
                         }
                         catch (OGSHaveNot hata)
                         {
+                            JOptionPane.showMessageDialog(null, wordOtobus + "\n" + hata.getMessage());
                             System.out.print(" " + hata.getMessage());
                         }
                         model.addRow(new Object[]{wordOtobus, "Otobüs", "3. Sınıf Araç", "-", "OGS Cihazı Yok", bus.ceza*2+" TL"});
