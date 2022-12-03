@@ -25,7 +25,7 @@ public class OGSGisesi {
 
     int sayacOGSYokOtobus = 0;
 
-    int getSayacBakiyeYetersizOtobus = 0;
+    int SayacBakiyeYetersizOtobus = 0;
     public OGSGisesi() {
         button1.addActionListener(new ActionListener() {
             /**
@@ -138,7 +138,7 @@ public class OGSGisesi {
                         sayacOGSYokOtobus++;
                     } else if (minibus.balance<0) {
                         model.addRow(new Object[]{wordOtobus, "Otobüs", "3. Sınıf Araç", bus.balance, "Bakiye Yetersiz.", bus.ceza+" TL"});
-                        getSayacBakiyeYetersizOtobus++;
+                        SayacBakiyeYetersizOtobus++;
                     }
                     else {
                         model.addRow(new Object[]{wordOtobus, "Otobüs", "3. Sınıf Araç", bus.balance + " TL", "Uygun"});
@@ -147,7 +147,18 @@ public class OGSGisesi {
 
                 textArea2.setText("Toplam gelen " + (minibus.totalVehicle+ car.totalVehicle+ bus.totalVehicle) + " araç için kazanılan para: " + admin.report(counter)+ " TL"+
                         "\nOGS olmayan Araç-Minibüs-Otobüs sayısı: " + (sayacOGSYokAraba+sayacOGSYokOtobus+sayacOGSYokMinibus) + " Tahsil edilen ceza tutarı: " + (sayacOGSYokAraba* car.ceza()+ sayacOGSYokMinibus*minibus.ceza() + sayacOGSYokOtobus* bus.ceza())*2 +
-                        "\nYetersiz bakiyesi olan Araç-Minibüs-Otobüs sayısı: " + (sayacBakiyeYetersizAraba+sayacBakiyeYetersizMinibus+getSayacBakiyeYetersizOtobus) + " Tahsil edilen ceza tutarı: " + (sayacBakiyeYetersizAraba* car.ceza()+sayacBakiyeYetersizMinibus* minibus.ceza()+ getSayacBakiyeYetersizOtobus* bus.ceza()));
+                        "\nYetersiz bakiyesi olan Araç-Minibüs-Otobüs sayısı: " + (sayacBakiyeYetersizAraba+sayacBakiyeYetersizMinibus+SayacBakiyeYetersizOtobus) + " Tahsil edilen ceza tutarı: " + (sayacBakiyeYetersizAraba* car.ceza()+sayacBakiyeYetersizMinibus* minibus.ceza()+ SayacBakiyeYetersizOtobus* bus.ceza()));
+
+                sayacOGSYokAraba = 0;
+                sayacOGSYokMinibus = 0;
+                sayacOGSYokOtobus = 0;
+
+                sayacBakiyeYetersizMinibus = 0;
+                sayacBakiyeYetersizAraba = 0;
+                SayacBakiyeYetersizOtobus = 0;
+
+                JFrame jFrame = new JFrame();
+                SwingUtilities.updateComponentTreeUI(jFrame);
 
             }
         });
