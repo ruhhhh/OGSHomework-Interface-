@@ -1,4 +1,4 @@
-/*
+/**
 * OGS'ye sahip araçların ödemelerinin alındığı ve cezalarının yansıtıldığı sınıfır.
 * */
 

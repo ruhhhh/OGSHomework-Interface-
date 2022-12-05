@@ -1,5 +1,5 @@
-/*
- *   Araba sınıfı arabanın gişe ücretini, trafik cezasını ve toplam gelecek olan araç sayısını belirtir.
+/**
+ *  Araba sınıfı arabanın gişe ücretini, trafik cezasını ve toplam gelecek olan araç sayısını belirtir.
  * */
 public class Car extends OGSVehicle {
     public Car()

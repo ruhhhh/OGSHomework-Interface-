@@ -1,4 +1,4 @@
-/*
+/**
 * Kendi hata sınıfımızı yazdığımız Exeption sınıfıdır.
 * */
 public class ExecptionThrow {

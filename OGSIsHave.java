@@ -1,4 +1,4 @@
-/*
+/**
 * Interfaceleri tutan alandır.
 * */
 public interface OGSIsHave {

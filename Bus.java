@@ -1,5 +1,5 @@
-/*
-*   Otobüs sınıfı otobüsün gişe ücretini, trafik cezasını ve toplam gelecek olan araç sayısını belirtir.
+/**
+* Otobüs sınıfı otobüsün gişe ücretini, trafik cezasını ve toplam gelecek olan araç sayısını belirtir.
 * */
 public class Bus extends OGSVehicle {
 

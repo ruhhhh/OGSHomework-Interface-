@@ -1,4 +1,4 @@
-/*
+/**
 * Gişe görevlisinin 8 saatlik mesaiye başlayıp araçları okuttuğu ve raporladığı alandır.
 * Araçlar ekrana basılırken OGS'den geçtikten sonra OGS Cihazlarının olup olmadığına ilişkin Execption kontrolü yapılır.
 * Bu alan Swing ile yapılmıştır.

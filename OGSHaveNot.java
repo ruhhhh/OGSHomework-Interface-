@@ -1,4 +1,4 @@
-/*
+/**
 * Hatayı yakalayan ve ekrana sınıftan dönen mesajı yazan sınıftır.
 * */
 public class OGSHaveNot extends Exception{

@@ -1,4 +1,4 @@
-/*
+/**
  *   Minibüs sınıfı minibüsün gişe ücretini, trafik cezasını ve toplam gelecek olan araç sayısını belirtir.
  * */
 public class Minibus extends OGSVehicle {

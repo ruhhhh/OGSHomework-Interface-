@@ -1,4 +1,4 @@
-/*
+/**
 * Gişe sınıfı ödeme alan ve toplam ödemeyi hesaplayan sınıftır. Counter metodu ile istenirse manüel olarak araç eklemeye olanak sağlar.
 * */
 public class Counter {

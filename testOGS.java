@@ -1,4 +1,4 @@
-/*
+/**
 * Swing uygulamasından önce ana hatlarıyla mantığın çalışıp çalışmadığını kontrol etmek amacıyla bu sınıf kullanılır.
 * */
 public class testOGS {
